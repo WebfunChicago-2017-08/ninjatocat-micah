@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+
+    <title>Ninja to Cat</title>
+
+    <script>
+        $(document).ready(function () {
+
+            $('img').click(function(){
+                // var row = $(this).data();    <-----------------------------  the wayyyy overcomplex way...but cool nonetheless.
+                // var srcString = $(this).attr("src");                         requires data-altsrc="x"  x refers to file number sequence (0,1,2,3,4)
+                // if (srcString.indexOf("ninja") === -1){
+                //     var ninjaSrc = "images/ninja" + row.row + ".png";
+                //     $(this).attr("src", ninjaSrc);
+                // }
+                // if (srcString.indexOf("cat") === -1){
+                //     var catSrc = "images/cat" + row.row + ".png";
+                //     $(this).attr("src", catSrc);
+                // }
+
+                    var swap = $(this).attr("data-altsrc");
+                    $(this).attr("data-altsrc", $(this).attr("src"));
+                    $(this).attr("src",swap);
+
+            })
+        })
+    </script>
+
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            width: 90%;
+            margin: 0px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .picture {
+            width: 180px;
+            height: 40px;
+            background-size: 100% auto;
+            background-position: center;
+            padding: 10px;
+            border: 1px dotted red;
+        }
+
+        img {
+            width: 180px;
+            background-size: 100% auto;
+            background-position: center;
+            display: block;
+            margin: 5px auto;
+        }
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1>jQuery – Assignment: Ninja to Cat</h1>
+
+    <img src="images/ninja0.png" data-altsrc="images/cat0.png">
+    <img src="images/ninja1.png" data-altsrc="images/cat1.png">
+    <img src="images/ninja2.png" data-altsrc="images/cat2.png">
+    <img src="images/ninja3.png" data-altsrc="images/cat3.png">
+    <img src="images/ninja4.png" data-altsrc="images/cat4.png">
+
+
+</body>
+
+</html>
